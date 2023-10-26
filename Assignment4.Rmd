@@ -1,0 +1,140 @@
+---
+title: "Nachiket Nareshkumar Pasrija (000918216)"
+subtitle: "Predictive Data Analytics (DATA-420-A)"
+output:
+  html_document:
+    df_print: paged
+---
+<style>
+body {
+text-align: justify}
+</style>
+
+### __Assignement 4__
+
+```{r,message=FALSE}
+library(tidyverse)
+library(tidyr)
+```
+
+### __Scenario One__
+```{r,message=FALSE}
+scenario1 <- read.csv("~/coffee_bloodPressure.csv", header = TRUE)
+colnames(scenario1)[1] <- "cups_of_coffee"
+colnames(scenario1)[2] <- "bp"
+```
+
+#### __1. Find the correlation between coffee consumption and blood pressure using the scatter plot__
+```{r,message=FALSE}
+# Create a scatter plot
+plot(scenario1$cups_of_coffee, scenario1$bp, 
+       xlab = "cups_of_coffee", ylab = "bp", 
+       main = "Scatter Plot of Coffee Consumption vs. Blood Pressure")
+```
+
+##### __This scatter plot depicts the association between coffee consumption and blood pressure.__
+
+<br>
+
+#### __2. Describe the relationship between coffee consumption and blood pressure and explain what someone should do if their doctor says that their blood pressure is a concern.__
+
+It appears that there is a positive link between blood pressure and coffee consumption, as shown by the scatter plot. That is to say, systolic blood pressure tends to rise in parallel with the quantity of coffee a person drinks. 
+
+If a patient's doctor advises them that their blood pressure needs to be monitored, they should think about doing the following:
+
+* Reducing or decreasing caffeine intake from coffee and other sources may be helpful given the possible positive association between blood pressure and coffee consumption.
+* Seeing a healthcare provider: For a thorough assessment, those with high or worrisome blood pressure should definitely see a healthcare provider. If necessary, they can offer advice on medication, lifestyle modifications, or other therapies.
+* Lifestyle adjustments: A balanced diet, weight management, regular exercise, and stress reduction are just a few examples of lifestyle adjustments that can help control and lower blood pressure.
+
+<br>  
+
+#### __3. Train the model and predict the values for 8 and 6 cups of coffee in a day.__
+```{r,message=FALSE}
+
+# Fit a linear regression model
+
+model <- lm(bp ~ cups_of_coffee, data = scenario1)
+
+# Create a new dataset for prediction
+new_data <- data.frame(cups_of_coffee = c(8, 6))
+
+# Predict values for 8 and 6 cups of coffee
+predictions <- predict(model, newdata = new_data)
+
+# Display the predictions
+cbind(new_data, predicted_blood_pressure = predictions)
+
+```
+
+### __Scenario Two__
+
+```{r,message=FALSE}
+scenario2 <- read.csv("~/dentalService.csv", header = TRUE)
+colnames(scenario2)[1] <- "income"
+colnames(scenario2)[2] <- "visits_count"
+colnames(scenario2)[3] <- "price"
+scenario2
+```
+#### __Performing Data Cleaning__
+```{r,message=FALSE}
+scenario2$income <- as.numeric(sub("\\$", "", scenario2$income))
+scenario2$price <- as.numeric(sub("\\$", "", scenario2$price))
+
+scenario2$income <- as.integer(scenario2$income)
+scenario2$price <- as.integer(scenario2$price)
+scenario2
+
+```
+
+#### __1. Create a scatterplot with linear regression line__
+```{r,message=FALSE}
+plot(
+  scenario2$income, scenario2$price, main = "Scatter Plot with Linear Progression",
+  xlab = "Income", ylab = "Price", pch = 19, col = "blue",
+  xlim = c(0, 250), ylim = c(0, 200))
+```
+
+<br>
+
+#### __2. Analyze the data and add a regression line__
+```{r,message=FALSE}
+plot(0, 0, type = "n", xlim = c(0, 250), ylim = c(0, 200), xlab = "Income", ylab = "Price")
+
+# Add the scatter plot
+points(scenario2$income, scenario2$price, pch = 19, col = "blue")
+
+# Perform linear regression
+model <- lm(price ~ income, data = scenario2)
+
+# Add a regression line
+abline(model, col = "red")
+```
+
+<br>
+
+
+#### __3. Predict the next two price points ($200 and $50)__
+
+```{r,message=FALSE}
+lm_model <- lm(price ~ income, data = scenario2)
+new_data <- data.frame(income = c(200, 50))
+new_data$predicted_price <- predict(lm_model, newdata = new_data)
+print(new_data)
+```
+<br>
+
+#### __4. Add both new values to the scatter linear graph__
+```{r,message=FALSE}
+plot(scenario2$income, scenario2$price, xlab = "Income", ylab = "Price", main = "Scatter Plot with Predicted Points", xlim = c(0, 250), ylim = c(0, 200))
+
+# Add the predicted points to the scatter plot
+points(new_data$income, new_data$predicted_price, col = "red", pch = 19)
+
+# Display the legend
+legend("topright", legend = "Predicted Points", col = "red", pch = 19)
+
+# Add the regression line to the scatter plot
+abline(lm_model, col = "blue")
+```
+
+
