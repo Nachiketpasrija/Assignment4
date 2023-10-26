@@ -37,7 +37,7 @@ Bright Smile Corporation provides dental services to their clients. They have be
 ![image](https://github.com/Nachiketpasrija/Assignment4/assets/148599951/567d522c-a75e-498c-a362-f86d262c0d4d)
 
 
-3. Predict the next two price points ($200 and $50).
+3. Predict the next two price points ($200 and $50).   <br>
 ![image](https://github.com/Nachiketpasrija/Assignment4/assets/148599951/068038b9-e1d5-4746-a071-cd453e31cccd)
 
 
