@@ -35,5 +35,5 @@ Bright Smile Corporation provides dental services to their clients. They have be
 3. Predict the next two price points ($200 and $50).
 ![image](https://github.com/Nachiketpasrija/Assignment4/assets/148599951/068038b9-e1d5-4746-a071-cd453e31cccd)
 
-4. Add both new values to the scatter linear graph. 
+5. Add both new values to the scatter linear graph. 
 ![image](https://github.com/Nachiketpasrija/Assignment4/assets/148599951/86c38432-497d-4f7f-a2db-c2f4713b549c)
