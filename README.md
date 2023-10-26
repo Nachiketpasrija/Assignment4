@@ -1,8 +1,5 @@
 # Assignment 4 – Linear Regression
 
-## Introduction
-This repository contains my solution to Assignment 1, which focuses on creating and manipulating a data frame in R. In this assignment, I followed specific instructions to create a data frame, append an "age" column, and set up a GitHub repository for the project.
-
 ### Scenario One
 You have been told that there is a correlation between coffee consumption and blood pressure. In order to statistically test the relationship you have collected data from 48 coffee drinkers, including the number of cups of coffee they have consumed and their blood pressures. Now you want to run a linear regression to see if there is any relationship between coffee consumption and blood pressure.
 
