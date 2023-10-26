@@ -20,24 +20,20 @@ You have been told that there is a correlation between coffee consumption and bl
 2. Seeing a healthcare provider: For a thorough assessment, those with high or worrisome blood pressure should definitely see a healthcare provider. If necessary, they can offer advice on medication, lifestyle modifications, or other therapies.
 3. Lifestyle adjustments: A balanced diet, weight management, regular exercise, and stress reduction are just a few examples of lifestyle adjustments that can help control and lower blood pressure.
 
-## Steps Taken
-1. **Data Frame Creation**:
-   - Created the "dframe" data frame with the provided variables "person," "sex," and "funny."
+3. Train the model and predict the values for 8 and 6 cups of coffee in a day.
+![image](https://github.com/Nachiketpasrija/Assignment4/assets/148599951/b512fa9a-a2f5-4e8e-b4c9-614c06397458)
 
-2. **Age Column Appending**:
-   - Appended the "age" column to the "dframe" data frame as instructed. Age information was added for each person.
+### Scenario Two
+Bright Smile Corporation provides dental services to their clients. They have been in business for a number of years, but recently they have experienced competition from other dental service providers who provide mobile dental services to their clients. Mobile services are all about providing basic dental services at clients' homes. Bright Smile has a dilemma, as they are unsure if the mobile service is a good inversion and/or expansion.
 
-3. **GitHub Repository Setup**:
-   - Created a GitHub repository for this assignment, including a README.md file and the R script.
+1. Show a graph (scatter) with linear progression.
+![image](https://github.com/Nachiketpasrija/Assignment4/assets/148599951/2e668b00-9e86-4e65-9d0e-eea273a46dcb)
 
-## Files
-Key files in this repository include:
-- `create_data_frame.R`: R script for creating the data frame and appending the "age" column.
+2. Analyze the data and add a regression line.
+![image](https://github.com/Nachiketpasrija/Assignment4/assets/148599951/567d522c-a75e-498c-a362-f86d262c0d4d)
 
-## Sample Output
-![image](https://github.com/Nachiketpasrija/Working_with_Dataframes/assets/148599951/f61e628b-6924-474c-8085-c2aca07aadf2)
+3. Predict the next two price points ($200 and $50).
+![image](https://github.com/Nachiketpasrija/Assignment4/assets/148599951/068038b9-e1d5-4746-a071-cd453e31cccd)
 
-
-## Submission
-Please submit the GitHub repository link on Brightspace (d2l).
-
+4. Add both new values to the scatter linear graph. 
+![image](https://github.com/Nachiketpasrija/Assignment4/assets/148599951/86c38432-497d-4f7f-a2db-c2f4713b549c)
